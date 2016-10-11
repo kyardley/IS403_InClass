@@ -35,7 +35,6 @@ C:\Users\klynty\Desktop\IS 403 V.S. Projects\IS403_InClass\Blow Out\Blow Out\bin
 C:\Users\klynty\Desktop\IS 403 V.S. Projects\IS403_InClass\Blow Out\Blow Out\bin\System.Web.WebPages.Deployment.xml
 C:\Users\klynty\Desktop\IS 403 V.S. Projects\IS403_InClass\Blow Out\Blow Out\bin\System.Web.WebPages.Razor.xml
 C:\Users\klynty\Desktop\IS 403 V.S. Projects\IS403_InClass\Blow Out\Blow Out\bin\Antlr3.Runtime.pdb
-C:\Users\klynty\Desktop\IS 403 V.S. Projects\IS403_InClass\Blow Out\Blow Out\bin\Newtonsoft.Json.xml
 C:\Users\klynty\Desktop\IS 403 V.S. Projects\IS403_InClass\Blow Out\Blow Out\bin\EntityFramework.xml
 C:\Users\klynty\Desktop\IS 403 V.S. Projects\IS403_InClass\Blow Out\Blow Out\bin\EntityFramework.SqlServer.xml
 C:\Users\klynty\Desktop\IS 403 V.S. Projects\IS403_InClass\Blow Out\Blow Out\bin\Microsoft.AspNet.Identity.Core.xml

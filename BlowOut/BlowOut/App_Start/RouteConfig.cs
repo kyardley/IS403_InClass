@@ -18,6 +18,12 @@ namespace BlowOut
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+                name: "Email",
+                url: "{controller}/{action}/{name}/{email}",
+                defaults: new { controller = "Contact", action = "Email", name = "Klynt", email = "klynt.yardley@gmail.com"}
+            );
         }
     }
 }

@@ -1,0 +1,12 @@
+﻿@model TestMyKnowledge.Models.Person
+
+@{
+    ViewBag.Title = "Person";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+@using (Html.BeginForm())
+{
+    <p> First Name: @Html.TextBoxFor(x => x.FirstName)</p>
+}
+<h2>Person</h2>
+

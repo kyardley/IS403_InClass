@@ -11,13 +11,13 @@ namespace BlowOut.Controllers
         // GET: Contact
         public String Index()
         {
-            string contactMessage = "Please call Support at <b><u>801-555-1212</u></b>. Thank you!";
+            string contactMessage = "<p>Please call Support at <b><u>801-555-1212</u></b>. Thank you!</p>";
             return contactMessage;
         }
 
         public String Email(string name, string email)
         {
-            string response = "Thank you " + name + ". We will send an email to " + email;
+            string response = "<p>Thank you " + name + ". We will send an email to " + email + "</p>";
             return response;
         }
     }

@@ -14,5 +14,11 @@ namespace BlowOut.Controllers
             string contactMessage = "Please call Support at 801-555-1212. Thanks you!";
             return contactMessage;
         }
+
+        public String Email(string name, string email)
+        {
+            string response = "Thank you " + name + ". We will send an email to " + email;
+            return response;
+        }
     }
 }

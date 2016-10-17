@@ -11,7 +11,7 @@ namespace BlowOut.Controllers
         // GET: Contact
         public String Index()
         {
-            string contactMessage = "Please call Support at 801-555-1212. Thanks you!";
+            string contactMessage = "Please call Support at 801-555-1212. Thank you!";
             return contactMessage;
         }
 

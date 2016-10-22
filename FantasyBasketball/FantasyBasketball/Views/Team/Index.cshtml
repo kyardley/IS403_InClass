@@ -1,0 +1,32 @@
+﻿@model IEnumerable<FantasyBasketball.Models.Team>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.teamName)
+        </th>
+
+    </tr>
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.teamName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit team", "Edit", new { id = item.teamID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.teamID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.teamID })
+            </td>
+        </tr>
+    }
+
+</table>

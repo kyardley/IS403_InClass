@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Rentals";
+}
+
+<h2>Online Instrument Rentals</h2>
+<div class="alert alert-info">
+    <strong>Remember: </strong>Once the 18 months has been achieved, you own the instrument.
+    If the instrument is returned at any time before 3 months there will be a $200 re-stocking fee.
+    If the instrument is returned after 3 months, any equity earned on the instrument is forfeited.
+</div>
+<p>Please select an instrument you would like to rent</p>
+
+
+<table border="1">
+    <tr>
+        <td>@Html.ActionLink("trumpet", "SelectedInstrument", "Home", new {  instrumentID="Trumpet" }, new { @class = "trumpet"})</td>
+        <td>@Html.ActionLink("trombone", "SelectedInstrument", "Home", new { instrumentID = "Trombone" }, new { @class = "trombone"})</td>
+        <td>@Html.ActionLink("frenchhorn", "SelectedInstrument", "Home", new { instrumentID = "French Horn" }, new { @class = "frenchhorn" })</td>
+    </tr>
+    <tr>
+        <td>@Html.ActionLink("Flute", "SelectedInstrument", "Home", new { instrumentID = "Flute" }, new { @class = "flute" })</td>
+        <td>@Html.ActionLink("Clarinet", "SelectedInstrument", "Home", new { instrumentID = "Clarinet" }, new { @class = "clarinet" })</td>
+        <td>@Html.ActionLink("Saxaphone", "SelectedInstrument", "Home", new { instrumentID = "Saxaphone" }, new { @class = "sax" })</td>
+    </tr>
+</table>
+

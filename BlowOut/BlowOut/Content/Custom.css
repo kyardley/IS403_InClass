@@ -1,3 +1,64 @@
 ﻿.myFooterText {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Impact, Charcoal, sans-serif;
+    color: green
+}
+
+#landingImage {
+    width: 80%;
+    height: 20%;
+    margin: auto;
+}
+
+.trumpet
+{
+    background: url(../Images/trumpet.jpg) no-repeat top left;
+     display: block;
+     width: 150px;
+     height: 150px;
+     text-indent: -9999px; /* hides the link text */
+}
+
+.trombone
+{
+    background: url(../Images/trombone.jpg) no-repeat top left;
+     display: block;
+     width: 150px;
+     height: 150px;
+     text-indent: -9999px; /* hides the link text */
+}
+
+.frenchhorn
+{
+    background: url(../Images/frenchhorn.jpg) no-repeat top left;
+     display: block;
+     width: 150px;
+     height: 150px;
+     text-indent: -9999px; /* hides the link text */
+}
+
+.flute
+{
+    background: url(../Images/flute.jpg) no-repeat top left;
+     display: block;
+     width: 150px;
+     height: 150px;
+     text-indent: -9999px; /* hides the link text */
+}
+
+.clarinet
+{
+    background: url(../Images/clarinet.jpg) no-repeat top left;
+     display: block;
+     width: 150px;
+     height: 150px;
+     text-indent: -9999px; /* hides the link text */
+}
+
+.sax
+{
+    background: url(../Images/Sax.jpg) no-repeat top left;
+     display: block;
+     width: 150px;
+     height: 150px;
+     text-indent: -9999px; /* hides the link text */
 }

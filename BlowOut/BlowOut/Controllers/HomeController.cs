@@ -4,6 +4,15 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+/*
+ * Assignment: Blow Out
+ * Date: 10/25/2016
+ * Description: Online Rental Website
+ * Extra: SuperHero Theme, Nav Pills, Image Hover,
+ * User cannot accidentally go to SelectedInstrument without clicking on a instrument from Rentals
+ * 
+ */
+
 namespace BlowOut.Controllers
 {
     public class HomeController : Controller
@@ -35,42 +44,50 @@ namespace BlowOut.Controllers
         public ActionResult SelectedInstrument(string instrumentID)
         {
 
-            ViewBag.Instrument = instrumentID;
-            if(instrumentID is)
-            switch (instrumentID)
+            if (instrumentID != null)
             {
-                case "Trumpet":
-                    ViewBag.New = "$55/month";
-                    ViewBag.Used = "$25/month";
-                    ViewBag.Src = "../Images/trumpet.jpg";
-                    break;
-                case "Trombone":
-                    ViewBag.New = "$60/month";
-                    ViewBag.Used = "$35/month";
-                    ViewBag.Src = "../Images/trombone.jpg";
-                    break;
-                case "French Horn":
-                    ViewBag.New = "$70/month";
-                    ViewBag.Used = "$50/month";
-                    ViewBag.Src = "../Images/frenchhorn.jpg";
-                    break;
-                case "Flute":
-                    ViewBag.New = "$40";
-                    ViewBag.Used = "$25";
-                    ViewBag.Src = "../Images/flute.jpg";
-                    break;
-                case "Clarinet":
-                    ViewBag.New = "$35";
-                    ViewBag.Used = "$27";
-                    ViewBag.Src = "../Images/clarinet.jpg";
-                    break;
-                case "Saxaphone":
-                    ViewBag.New = "$42";
-                    ViewBag.Used = "$30";
-                    ViewBag.Src = "../Images/sax.jpg";
-                    break;
+                ViewBag.Instrument = instrumentID;
+
+                switch (instrumentID)
+                {
+                    case "Trumpet":
+                        ViewBag.New = "$55/month";
+                        ViewBag.Used = "$25/month";
+                        ViewBag.Src = "../Images/trumpet.jpg";
+                        break;
+                    case "Trombone":
+                        ViewBag.New = "$60/month";
+                        ViewBag.Used = "$35/month";
+                        ViewBag.Src = "../Images/trombone.jpg";
+                        break;
+                    case "French Horn":
+                        ViewBag.New = "$70/month";
+                        ViewBag.Used = "$50/month";
+                        ViewBag.Src = "../Images/frenchhorn.jpg";
+                        break;
+                    case "Flute":
+                        ViewBag.New = "$405/month";
+                        ViewBag.Used = "$255/month";
+                        ViewBag.Src = "../Images/flute.jpg";
+                        break;
+                    case "Clarinet":
+                        ViewBag.New = "$355/month";
+                        ViewBag.Used = "$275/month";
+                        ViewBag.Src = "../Images/clarinet.jpg";
+                        break;
+                    case "Saxaphone":
+                        ViewBag.New = "$425/month";
+                        ViewBag.Used = "$305/month";
+                        ViewBag.Src = "../Images/sax.jpg";
+                        break;
+                }
+                return View();
             }
-            return View();
+            else
+            {
+                return RedirectToAction("Rentals");
+            }
+            
         }
     }
 }

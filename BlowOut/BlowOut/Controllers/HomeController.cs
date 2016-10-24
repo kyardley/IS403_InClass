@@ -66,18 +66,18 @@ namespace BlowOut.Controllers
                         ViewBag.Src = "../Images/frenchhorn.jpg";
                         break;
                     case "Flute":
-                        ViewBag.New = "$405/month";
-                        ViewBag.Used = "$255/month";
+                        ViewBag.New = "$40/month";
+                        ViewBag.Used = "$25/month";
                         ViewBag.Src = "../Images/flute.jpg";
                         break;
                     case "Clarinet":
-                        ViewBag.New = "$355/month";
-                        ViewBag.Used = "$275/month";
+                        ViewBag.New = "$35/month";
+                        ViewBag.Used = "$27/month";
                         ViewBag.Src = "../Images/clarinet.jpg";
                         break;
                     case "Saxaphone":
-                        ViewBag.New = "$425/month";
-                        ViewBag.Used = "$305/month";
+                        ViewBag.New = "$42/month";
+                        ViewBag.Used = "$30/month";
                         ViewBag.Src = "../Images/sax.jpg";
                         break;
                 }

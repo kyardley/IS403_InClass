@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "SelectedInstrument";
+}
+
+<h2>@ViewBag.Instrument Rentals: </h2>
+
+<div class="alert alert-info">
+    <strong>Remember: </strong>Once the 18 months has been achieved, you own the instrument. 
+    If the instrument is returned at any time before 3 months there will be a $200 re-stocking fee. 
+    If the instrument is returned after 3 months, any equity earned on the instrument is forfeited.
+</div> 
+
+You picked @ViewBag.Instrument
+<img src="@ViewBag.Src" />
+
+<ul class="nav nav-pills">
+    <li role="presentation"class="active"><a data-toggle="tab" href="#new">New</a></li>
+    <li role="presentation"><a data-toggle="tab" href="#used">Used</a></li>
+</ul>
+
+<div class="tab-content">
+    <div id="new" class="tab-pane fade in active">
+        @ViewBag.New
+    </div>
+    <div id="used" class="tab-pane">
+        @ViewBag.Used
+    </div>
+
+</div>
+
+

@@ -1,12 +1,14 @@
 ﻿.myFooterText {
     font-family: Impact, Charcoal, sans-serif;
-    color: green
+    color: #df691a
 }
 
 #landingImage {
+    display: block;
     width: 80%;
-    height: 20%;
+    height: auto;
     margin: auto;
+    clip: rect(0px,60px,200px,0px);
 }
 
 .trumpet

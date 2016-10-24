@@ -34,8 +34,9 @@ namespace BlowOut.Controllers
 
         public ActionResult SelectedInstrument(string instrumentID)
         {
-            ViewBag.Instrument = instrumentID;
 
+            ViewBag.Instrument = instrumentID;
+            if(instrumentID is)
             switch (instrumentID)
             {
                 case "Trumpet":

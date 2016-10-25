@@ -8,7 +8,7 @@ using System.Web.Mvc;
  * Assignment: Blow Out
  * Date: 10/25/2016
  * Description: Online Rental Website
- * Extra: SuperHero Theme, Nav Pills, Image Hover,
+ * Extra: SuperHero Theme, Nav Pills, Image Hover, Back Button.
  * User cannot accidentally go to SelectedInstrument without clicking on a instrument from Rentals
  * 
  */

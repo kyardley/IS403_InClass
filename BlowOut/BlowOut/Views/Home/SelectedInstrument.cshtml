@@ -11,22 +11,23 @@
     If the instrument is returned after 3 months, any equity earned on the instrument is forfeited.
 </div> 
 
+<p><a href="@Url.Action("Rentals","Home")" class="btn btn-default">Back &raquo;</a></p>
+<p><img src="@ViewBag.Src" /> </p>
+<div class="row">
+    <ul class="nav nav-pills">
+        <li role="presentation" class="active"><a data-toggle="tab" href="#new">New</a></li>
+        <li role="presentation"><a data-toggle="tab" href="#used">Used</a></li>
+    </ul>
 
-<img src="@ViewBag.Src" />
+    <div class="tab-content row">
+        <div id="new" class="tab-pane fade in active">
+            <p> Price: @ViewBag.New </p>
+        </div>
+        <div id="used" class="tab-pane">
+            <p> Price: @ViewBag.Used </p>
+        </div>
 
-<ul class="nav nav-pills">
-    <li role="presentation"class="active"><a data-toggle="tab" href="#new">New</a></li>
-    <li role="presentation"><a data-toggle="tab" href="#used">Used</a></li>
-</ul>
-
-<div class="tab-content">
-    <div id="new" class="tab-pane fade in active">
-        @ViewBag.New
     </div>
-    <div id="used" class="tab-pane">
-        @ViewBag.Used
-    </div>
-
 </div>
 
 

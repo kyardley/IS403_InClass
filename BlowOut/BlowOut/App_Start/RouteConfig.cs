@@ -13,6 +13,12 @@ namespace BlowOut
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            //routes.MapRoute(
+            //    name: "SelectedInstrument",
+            //    url: "Home/SelectedInstrument/{instrumentID}",
+            //    defaults: new { controller = "Home", action = "SelectedInstrument" }
+            //    );
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

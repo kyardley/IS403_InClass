@@ -180,6 +180,13 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\clarinet.jpg" />
+    <Content Include="Images\Flute.jpg" />
+    <Content Include="Images\frenchhorn.jpg" />
+    <Content Include="Images\instruments.jpg" />
+    <Content Include="Images\Sax.jpg" />
+    <Content Include="Images\trombone.jpg" />
+    <Content Include="Images\trumpet.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -234,7 +241,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Images\" />
     <Folder Include="Views\Contact\" />
   </ItemGroup>
   <ItemGroup>

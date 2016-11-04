@@ -1,30 +1,51 @@
-﻿
+﻿@model IEnumerable<BlowOut.Models.Instrument>
+
 @{
     ViewBag.Title = "Rentals";
 }
-<div class="container">
-    <div class="row">
-        <h2>Online Instrument Rentals</h2>
-        <div class="alert alert-info">
-            <strong>Remember: </strong>Once the 18 months has been achieved, you own the instrument.
-            If the instrument is returned at any time before 3 months there will be a $200 re-stocking fee.
-            If the instrument is returned after 3 months, any equity earned on the instrument is forfeited.
-        </div>
-        <p>Please select an instrument you would like to rent:</p>
 
+<h2>Rentals</h2>
 
-        <table>
-            <tr>
-                <td>@Html.ActionLink("trumpet", "SelectedInstrument", "Home", new { instrumentID = "Trumpet" }, new { @class = "trumpet" })</td>
-                <td>@Html.ActionLink("trombone", "SelectedInstrument", "Home", new { instrumentID = "Trombone" }, new { @class = "trombone" })</td>
-                <td>@Html.ActionLink("frenchhorn", "SelectedInstrument", "Home", new { instrumentID = "French Horn" }, new { @class = "frenchhorn" })</td>
-            </tr>
-            <tr>
-                <td>@Html.ActionLink("Flute", "SelectedInstrument", "Home", new { instrumentID = "Flute" }, new { @class = "flute" })</td>
-                <td>@Html.ActionLink("Clarinet", "SelectedInstrument", "Home", new { instrumentID = "Clarinet" }, new { @class = "clarinet" })</td>
-                <td>@Html.ActionLink("Saxaphone", "SelectedInstrument", "Home", new { instrumentID = "Saxaphone" }, new { @class = "sax" })</td>
-            </tr>
-        </table>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Inst_Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Inst_Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Inst_Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cust_ID)
+        </th>
+        <th></th>
+    </tr>
 
-    </div>
-</div>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Inst_Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Inst_Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Inst_Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cust_ID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Inst_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Inst_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Inst_ID })
+        </td>
+    </tr>
+}
+
+</table>

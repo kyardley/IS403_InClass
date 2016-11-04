@@ -33,6 +33,26 @@ namespace BlowOut.Controllers
             return View(db.Instruments.ToList());
         }
 
+        //get
+        public ActionResult Rental_Form(int id)
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Rental_Form([Bind(Include = "Cust_ID,Cust_FirstName,Cust_LastName,Cust_Address,Cust_City,Cust_State,Cust_Zip,Cust_Phone")] Customer customer)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Customers.Add(customer);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(customer);
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

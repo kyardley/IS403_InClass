@@ -1,0 +1,56 @@
+﻿@model BlowOut.Models.Instrument
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Instrument</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Inst_Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Inst_Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Inst_Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Inst_Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Inst_Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Inst_Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerID)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

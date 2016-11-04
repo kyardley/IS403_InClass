@@ -14,6 +14,8 @@ namespace BlowOut.Models
         public int Inst_ID { get; set; }
         [Required(ErrorMessage = "Please enter a Description")]
         public string Inst_Description { get; set; }
+        [Required(ErrorMessage = "Please enter a Type")]
+        public string Inst_Type { get; set; }
         [Required(ErrorMessage = "Please enter a Price")]
         public string Inst_Price { get; set; }
 

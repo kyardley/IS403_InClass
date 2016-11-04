@@ -47,7 +47,7 @@ namespace BlowOut.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "InstrumentID,Inst_Description,Inst_Type,Inst_Price,CustomerID")] Instrument instrument)
+        public ActionResult Create([Bind(Include = "Inst_ID,Inst_Description,Inst_Price,Cust_ID")] Instrument instrument)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace BlowOut.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "InstrumentID,Inst_Description,Inst_Type,Inst_Price,CustomerID")] Instrument instrument)
+        public ActionResult Edit([Bind(Include = "Inst_ID,Inst_Description,Inst_Price,Cust_ID")] Instrument instrument)
         {
             if (ModelState.IsValid)
             {

@@ -15,13 +15,10 @@
             @Html.DisplayNameFor(model => model.Inst_Description)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Inst_Type)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Inst_Price)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CustomerID)
+            @Html.DisplayNameFor(model => model.Cust_ID)
         </th>
         <th></th>
     </tr>
@@ -32,18 +29,15 @@
             @Html.DisplayFor(modelItem => item.Inst_Description)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Inst_Type)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.Inst_Price)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.CustomerID)
+            @Html.DisplayFor(modelItem => item.Cust_ID)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.InstrumentID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.InstrumentID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.InstrumentID })
+            @Html.ActionLink("Edit", "Edit", new { id=item.Inst_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Inst_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Inst_ID })
         </td>
     </tr>
 }

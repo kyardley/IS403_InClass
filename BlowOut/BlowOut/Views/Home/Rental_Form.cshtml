@@ -17,7 +17,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Cust_FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Cust_FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Cust_FirstName, new { htmlAttributes = new { @class = "form-control", @placeholder = "First Name" } })
                 @Html.ValidationMessageFor(model => model.Cust_FirstName, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -25,7 +25,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Cust_LastName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Cust_LastName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Cust_LastName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Last Name" } })
                 @Html.ValidationMessageFor(model => model.Cust_LastName, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -33,7 +33,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Cust_Address, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Cust_Address, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Cust_Address, new { htmlAttributes = new { @class = "form-control", @placeholder = "Street Address" } })
                 @Html.ValidationMessageFor(model => model.Cust_Address, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -41,7 +41,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Cust_City, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Cust_City, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Cust_City, new { htmlAttributes = new { @class = "form-control", @placeholder = "City" } })
                 @Html.ValidationMessageFor(model => model.Cust_City, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -49,7 +49,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Cust_State, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Cust_State, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Cust_State, new { htmlAttributes = new { @class = "form-control", @placeholder = "State" } })
                 @Html.ValidationMessageFor(model => model.Cust_State, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -57,7 +57,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Cust_Zip, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Cust_Zip, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Cust_Zip, new { htmlAttributes = new { @class = "form-control", @placeholder = "Zip" } })
                 @Html.ValidationMessageFor(model => model.Cust_Zip, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -65,7 +65,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Cust_Phone, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Cust_Phone, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Cust_Phone, new { htmlAttributes = new { @class = "form-control", @placeholder = "(xxx) xxx-xxxx" } })
                 @Html.ValidationMessageFor(model => model.Cust_Phone, "", new { @class = "text-danger" })
             </div>
         </div>

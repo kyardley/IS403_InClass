@@ -121,53 +121,6 @@ namespace BlowOut.Controllers
             return View();
         }
 
-        public ActionResult SelectedInstrument(string instrumentID)
-        {
 
-            if (instrumentID != null)
-            {
-                ViewBag.Instrument = instrumentID;
-
-                switch (instrumentID)
-                {
-                    case "Trumpet":
-                        ViewBag.New = "$55/month";
-                        ViewBag.Used = "$25/month";
-                        ViewBag.Src = "../Images/trumpet.jpg";
-                        break;
-                    case "Trombone":
-                        ViewBag.New = "$60/month";
-                        ViewBag.Used = "$35/month";
-                        ViewBag.Src = "../Images/trombone.jpg";
-                        break;
-                    case "French Horn":
-                        ViewBag.New = "$70/month";
-                        ViewBag.Used = "$50/month";
-                        ViewBag.Src = "../Images/frenchhorn.jpg";
-                        break;
-                    case "Flute":
-                        ViewBag.New = "$40/month";
-                        ViewBag.Used = "$25/month";
-                        ViewBag.Src = "../Images/flute.jpg";
-                        break;
-                    case "Clarinet":
-                        ViewBag.New = "$35/month";
-                        ViewBag.Used = "$27/month";
-                        ViewBag.Src = "../Images/clarinet.jpg";
-                        break;
-                    case "Saxaphone":
-                        ViewBag.New = "$42/month";
-                        ViewBag.Used = "$30/month";
-                        ViewBag.Src = "../Images/sax.jpg";
-                        break;
-                }
-                return View();
-            }
-            else
-            {
-                return RedirectToAction("Rentals");
-            }
-            
-        }
     }
 }

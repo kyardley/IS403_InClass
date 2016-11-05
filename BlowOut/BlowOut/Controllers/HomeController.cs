@@ -41,16 +41,36 @@ namespace BlowOut.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Rental_Form([Bind(Include = "Cust_ID,Cust_FirstName,Cust_LastName,Cust_Address,Cust_City,Cust_State,Cust_Zip,Cust_Phone")] Customer customer)
+        public ActionResult Rental_Form([Bind(Include = "Cust_ID,Cust_FirstName,Cust_LastName,Cust_Address,Cust_City,Cust_State,Cust_Zip,Cust_Phone")] Customer customer, int id)
         {
             if (ModelState.IsValid)
             {
                 db.Customers.Add(customer);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+
+                //Lookup instrument
+                Instrument instrument = db.Instruments.Find(id);
+                //Update Instrument
+                
+               instrument.Cust_ID = customer.Cust_ID;
+                db.SaveChanges();
+
+
+                return RedirectToAction("Confirmation", new { Cust_ID = customer.Cust_ID, Inst_ID= instrument.Inst_ID});
             }
 
             return View(customer);
+        }
+
+        public ActionResult Confirmation(int Cust_ID, int Inst_ID)
+        {
+            Customer customer = db.Customers.Find(Cust_ID);
+            Instrument instrument = db.Instruments.Find(Inst_ID);
+
+            ViewBag.Customer = customer;
+            ViewBag.Instrument = instrument;
+
+            return View();
         }
 
         public ActionResult About()

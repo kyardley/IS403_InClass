@@ -255,6 +255,7 @@
     <Content Include="Views\Instruments\Index.cshtml" />
     <Content Include="Views\Home\Rentals.cshtml" />
     <Content Include="Views\Home\Rental_Form.cshtml" />
+    <Content Include="Views\Home\Confirmation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

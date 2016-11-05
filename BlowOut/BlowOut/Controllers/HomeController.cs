@@ -66,11 +66,45 @@ namespace BlowOut.Controllers
         {
             Customer customer = db.Customers.Find(Cust_ID);
             Instrument instrument = db.Instruments.Find(Inst_ID);
-
+            //Sets customer and instrument as ViewBags to send to the View
             ViewBag.Customer = customer;
             ViewBag.Instrument = instrument;
+            
+            //Calculates the Total Price paid at the end of the 18 months for selected instrument
+            string sub = instrument.Inst_Price.Substring(1, 2);
+            ViewBag.Total = 18 * Convert.ToInt32(sub);
 
+            //Finds the Image source for selected instrument
+            switch (instrument.Inst_Description)
+            {
+                case "Trumpet":
+                    ViewBag.Src = "../Images/trumpet.jpg";
+                    break;
+                case "Trombone":
+                    ViewBag.Src = "../Images/trombone.jpg";
+                    break;
+                case "French Horn":
+                    ViewBag.Src = "../Images/frenchhorn.jpg";
+                    break;
+                case "Flute":
+                    ViewBag.Src = "../Images/flute.jpg";
+                    break;
+                case "Clarinet":
+                    ViewBag.Src = "../Images/clarinet.jpg";
+                    break;
+                case "Saxaphone":
+                    ViewBag.Src = "../Images/sax.jpg";
+                    break;
+            }
+            
+            
+            
             return View();
+
+
+
+
+
         }
 
         public ActionResult About()

@@ -36,14 +36,17 @@ namespace BlowOut.Models
 
         [DisplayName("Zip Code:")]
         [Required(ErrorMessage = "Please enter a Zip Code")]
+        [StringLength(5, MinimumLength = 5, ErrorMessage = "You must enter a 5 digit Zip Code")]
         public string Cust_Zip { get; set; }
 
         [DisplayName("Email:")]
         [Required(ErrorMessage = "Please enter an Email")]
+        [RegularExpression(@"^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$", ErrorMessage = "Please Enter Correct Email Address")]
         public string Cust_Email { get; set; }
 
         [DisplayName("Phone Number:")]
         [Required(ErrorMessage = "Please enter a Phone Number")]
+        [RegularExpression(@"\(\d{3}\)\s\d{3}-\d{4}", ErrorMessage= "Please enter number in (xxx) xxx-xxxx format")]
         public string Cust_Phone { get; set; }
     }
 }

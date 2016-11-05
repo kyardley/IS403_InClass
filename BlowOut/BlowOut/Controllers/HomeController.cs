@@ -39,6 +39,7 @@ namespace BlowOut.Controllers
             return View();
         }
 
+        //Post
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Rental_Form([Bind(Include = "Cust_ID,Cust_FirstName,Cust_LastName,Cust_Address,Cust_City,Cust_State,Cust_Zip,Cust_Email,Cust_Phone")] Customer customer, int id)

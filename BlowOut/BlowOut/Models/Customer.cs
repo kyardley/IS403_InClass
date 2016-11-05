@@ -38,6 +38,10 @@ namespace BlowOut.Models
         [Required(ErrorMessage = "Please enter a Zip Code")]
         public string Cust_Zip { get; set; }
 
+        [DisplayName("Email:")]
+        [Required(ErrorMessage = "Please enter an Email")]
+        public string Cust_Email { get; set; }
+
         [DisplayName("Phone Number:")]
         [Required(ErrorMessage = "Please enter a Phone Number")]
         public string Cust_Phone { get; set; }

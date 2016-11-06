@@ -46,7 +46,7 @@ namespace BlowOut.Models
 
         [DisplayName("Phone Number:")]
         [Required(ErrorMessage = "Please enter a Phone Number")]
-        [RegularExpression(@"\(\d{3}\)\s\d{3}-\d{4}", ErrorMessage= "Please enter number in (xxx) xxx-xxxx format")]
+        [RegularExpression(@"\(\d{3}\)\s\d{3}-\d{4}", ErrorMessage= "Enter Phone Number like (xxx) xxx-xxxx")]
         public string Cust_Phone { get; set; }
     }
 }

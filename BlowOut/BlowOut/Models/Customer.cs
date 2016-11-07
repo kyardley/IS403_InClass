@@ -32,6 +32,7 @@ namespace BlowOut.Models
 
         [DisplayName("State:")]
         [Required(ErrorMessage = "Please enter a State")]
+        [StringLength(2, MinimumLength = 2, ErrorMessage = "Please enter the State Code (i.e. UT)")]
         public string Cust_State { get; set; }
 
         [DisplayName("Zip Code:")]

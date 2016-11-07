@@ -126,3 +126,5 @@
   display: none;
 }
 
+/*Class stop print confirmation*/
+.print {visibility:visible;}

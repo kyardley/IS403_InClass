@@ -3,32 +3,37 @@
     ViewBag.Title = "Confirmation";
 }
 @*Header Information for the confirmation page*@
-<h2>Order Confirmation</h2>
-<p><img src="@ViewBag.Src" /> </p>
-<p>Thank you, @ViewBag.Customer.Cust_FirstName @ViewBag.Customer.Cust_LastName! </p>
-<p>Your @ViewBag.Instrument.Inst_Description will be ready for pickup tomorrow at 9 AM.  Listed below are your order details:</p>
+<div class="print">
+    <h2>Order Confirmation</h2>
+    <p><img src="@ViewBag.Src" /> </p>
+    <p>Thank you, @ViewBag.Customer.Cust_FirstName @ViewBag.Customer.Cust_LastName! </p>
+    <p>Your @ViewBag.Instrument.Inst_Description will be ready for pickup tomorrow at 9 AM.  Listed below are your order details:</p>
 
-@*Table that Contains Order Confirmation*@
-<table class="table">
-    <tbody>
-        <tr>
-            <th>Order Number:</th>
-            <th>@ViewBag.Customer.Cust_ID</th>
-        </tr>
-        <tr>
-            <th>Item:</th>
-            <th>@ViewBag.Instrument.Inst_Description</th>
-        </tr>
-        <tr>
-            <th>Condition:</th>
-            <th>@ViewBag.Instrument.Inst_Type</th>
-        <tr>
-            <th>Monthly Price:</th>
-            <th>@ViewBag.Instrument.Inst_Price</th>
-        </tr>
-        <tr>
-            <th>Total Price (at the end of 18 months):</th>
-            <th>$@ViewBag.Total</th>
-        </tr>
-    </tbody>
-</table>
+    @*Table that Contains Order Confirmation*@
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Order Number:</th>
+                <th>@ViewBag.Customer.Cust_ID</th>
+            </tr>
+            <tr>
+                <th>Item:</th>
+                <th>@ViewBag.Instrument.Inst_Description</th>
+            </tr>
+            <tr>
+                <th>Condition:</th>
+                <th>@ViewBag.Instrument.Inst_Type</th>
+            <tr>
+                <th>Monthly Price:</th>
+                <th>@ViewBag.Instrument.Inst_Price</th>
+            </tr>
+            <tr>
+                <th>Total Price (at the end of 18 months):</th>
+                <th>$@ViewBag.Total</th>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<a href="#" onclick="window.print();return false;">Print this page</a>

@@ -29,14 +29,28 @@ namespace BlowOut.Controllers
         }
 
         //Passes the Instrument Model to the view to list the instruments
-        public ActionResult Rentals(string type)
+        public ActionResult Rentals(string Description)
         {
-            IEnumerable<Instrument> instruments =
-                db.Database.SqlQuery<Instrument>("Select Inst_Id, Inst_Description, Inst_Type, Inst_Price, Cust_ID " +
-                                                    "FROM Instrument " +
-                                                    "WHERE Inst_Type = '" + type + "'");
-            //return View(db.Instruments.ToList());
+            IEnumerable<Instrument> instruments;
+            if (Description == "all")
+            {
+                instruments =
+                    db.Database.SqlQuery<Instrument>("Select Inst_Id, Inst_Description, Inst_Type, Inst_Price, Cust_ID " +
+                                                                        "FROM Instrument " +
+                                                                        "ORDER BY Inst_ID, Inst_Description");
+            }
+            else
+             {
+                //Separates New and Used Instruments
+                instruments =
+                    db.Database.SqlQuery<Instrument>("Select Inst_Id, Inst_Description, Inst_Type, Inst_Price, Cust_ID " +
+                                                        "FROM Instrument " +
+                                                        "WHERE Inst_Description = '" + Description + "'");
+               
+            }
+
             return View(instruments);
+           
         }
 
         //get

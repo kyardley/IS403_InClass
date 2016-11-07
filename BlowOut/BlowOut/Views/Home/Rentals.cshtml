@@ -5,7 +5,24 @@
 }
 
 <h2>Rentals</h2>
+<div class="row">
+        Narrow your search: <div class="dropdown">
+            <a class="dropdown-toggle btn btn-primary" data-toggle="dropdown" href="#">
+                Instrument
+                <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="@Url.Action("Rentals", "Home", new { Description="Trumpet"})">Trumpet</a></li>
+                <li><a href="@Url.Action("Rentals", "Home", new { Description = "Trombone" })">Trombone</a></li>
+                <li><a href="@Url.Action("Rentals", "Home", new { Description = "French Horn" })">French Horn</a></li>
+                <li><a href="@Url.Action("Rentals", "Home", new { Description = "Flute" })">Flute</a></li>
+                <li><a href="@Url.Action("Rentals", "Home", new { Description = "Clarinet" })">Clarinet</a></li>
+                <li><a href="@Url.Action("Rentals", "Home", new { Description = "Saxaphone" })">Saxaphone</a></li>
+            </ul>
+        </div>
 
+
+</div>
 <table class="table">
     <tr>
         <th>

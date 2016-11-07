@@ -28,9 +28,15 @@ namespace BlowOut.Controllers
             return View();
         }
 
-        public ActionResult Rentals()
+        //Passes the Instrument Model to the view to list the instruments
+        public ActionResult Rentals(string type)
         {
-            return View(db.Instruments.ToList());
+            IEnumerable<Instrument> instruments =
+                db.Database.SqlQuery<Instrument>("Select Inst_Id, Inst_Description, Inst_Type, Inst_Price, Cust_ID " +
+                                                    "FROM Instrument " +
+                                                    "WHERE Inst_Type = '" + type + "'");
+            //return View(db.Instruments.ToList());
+            return View(instruments);
         }
 
         //get
@@ -51,14 +57,17 @@ namespace BlowOut.Controllers
 
                 //Lookup instrument
                 Instrument instrument = db.Instruments.Find(id);
-                //Update Instrument
                 
+                //Update Instrument
                instrument.Cust_ID = customer.Cust_ID;
                 db.SaveChanges();
 
 
                 return RedirectToAction("Confirmation", new { Cust_ID = customer.Cust_ID, Inst_ID= instrument.Inst_ID});
             }
+            
+            //Else if not valid, returns forms with error messages
+            else
 
             return View(customer);
         }
@@ -67,6 +76,7 @@ namespace BlowOut.Controllers
         {
             Customer customer = db.Customers.Find(Cust_ID);
             Instrument instrument = db.Instruments.Find(Inst_ID);
+            
             //Sets customer and instrument as ViewBags to send to the View
             ViewBag.Customer = customer;
             ViewBag.Instrument = instrument;

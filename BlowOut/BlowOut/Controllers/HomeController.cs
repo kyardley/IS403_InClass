@@ -45,7 +45,9 @@ namespace BlowOut.Controllers
                 instruments =
                     db.Database.SqlQuery<Instrument>("Select Inst_Id, Inst_Description, Inst_Type, Inst_Price, Cust_ID " +
                                                         "FROM Instrument " +
-                                                        "WHERE Inst_Description = '" + Description + "'");
+                                                        "WHERE Inst_Description = '" + Description + "' " +
+                                                        "ORDER BY Inst_Type");
+                ViewBag.Clear = "Clear search";
                
             }
 

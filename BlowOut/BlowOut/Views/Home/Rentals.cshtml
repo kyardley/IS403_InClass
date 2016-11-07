@@ -7,7 +7,7 @@
 <h2>Rentals</h2>
 <div class="row">
         Narrow your search: <div class="dropdown">
-            <a class="dropdown-toggle btn btn-primary" data-toggle="dropdown" href="#">
+            <a class="dropdown-toggle btn btn-info" data-toggle="dropdown" href="#">
                 Instrument
                 <span class="caret"></span>
             </a>
@@ -20,6 +20,7 @@
                 <li><a href="@Url.Action("Rentals", "Home", new { Description = "Saxaphone" })">Saxaphone</a></li>
             </ul>
         </div>
+    <a href="@Url.Action("Rentals", "Home", new { Description = "all" })">@ViewBag.Clear</a>
 
 
 </div>

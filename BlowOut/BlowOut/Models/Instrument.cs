@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -13,19 +12,13 @@ namespace BlowOut.Models
     {
         [Key]
         public int Inst_ID { get; set; }
-
         [Required(ErrorMessage = "Please enter a Description")]
-        [DisplayName("Instrument")]
         public string Inst_Description { get; set; }
-        
         [Required(ErrorMessage = "Please enter a Type")]
-        [DisplayName("Type")]
         public string Inst_Type { get; set; }
-        
         [Required(ErrorMessage = "Please enter a Price")]
-        [DisplayName("Price")]
         public string Inst_Price { get; set; }
 
-        public int? Cust_ID { get; set; } 
+        public string Cust_ID { get; set; }
     }
 }

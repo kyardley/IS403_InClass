@@ -206,7 +206,6 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Images\JackBlack.jpg" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -242,7 +241,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Home\Rentals%28CP3%29.cshtml" />
+    <Content Include="Views\Home\Rentals.cshtml" />
     <Content Include="Views\Home\SelectedInstrument.cshtml" />
     <Content Include="Views\Customers\Create.cshtml" />
     <Content Include="Views\Customers\Delete.cshtml" />
@@ -254,13 +253,9 @@
     <Content Include="Views\Instruments\Details.cshtml" />
     <Content Include="Views\Instruments\Edit.cshtml" />
     <Content Include="Views\Instruments\Index.cshtml" />
-    <Content Include="Views\Home\Rentals.cshtml" />
-    <Content Include="Views\Home\Rental_Form.cshtml" />
-    <Content Include="Views\Home\Confirmation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Receipts\" />
     <Folder Include="Views\Contact\" />
   </ItemGroup>
   <ItemGroup>

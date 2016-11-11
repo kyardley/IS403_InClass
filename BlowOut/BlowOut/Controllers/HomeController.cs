@@ -28,9 +28,110 @@ namespace BlowOut.Controllers
             return View();
         }
 
-        public ActionResult Rentals()
+        //Passes the Instrument Model to the view to list the instruments
+        public ActionResult Rentals(string Description)
+        {
+            IEnumerable<Instrument> instruments;
+            if (Description == "all")
+            {
+                instruments =
+                    db.Database.SqlQuery<Instrument>("Select Inst_Id, Inst_Description, Inst_Type, Inst_Price, Cust_ID " +
+                                                                        "FROM Instrument " +
+                                                                        "ORDER BY Inst_ID, Inst_Description");
+            }
+            else
+             {
+                //Separates New and Used Instruments
+                instruments =
+                    db.Database.SqlQuery<Instrument>("Select Inst_Id, Inst_Description, Inst_Type, Inst_Price, Cust_ID " +
+                                                        "FROM Instrument " +
+                                                        "WHERE Inst_Description = '" + Description + "' " +
+                                                        "ORDER BY Inst_Type");
+                ViewBag.Clear = "Clear search";
+               
+            }
+
+            return View(instruments);
+           
+        }
+
+        //get
+        public ActionResult Rental_Form(int id)
         {
             return View();
+        }
+
+        //Post
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Rental_Form([Bind(Include = "Cust_ID,Cust_FirstName,Cust_LastName,Cust_Address,Cust_City,Cust_State,Cust_Zip,Cust_Email,Cust_Phone")] Customer customer, int id)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Customers.Add(customer);
+                db.SaveChanges();
+
+                //Lookup instrument
+                Instrument instrument = db.Instruments.Find(id);
+                
+                //Update Instrument
+               instrument.Cust_ID = customer.Cust_ID;
+                db.SaveChanges();
+
+
+                return RedirectToAction("Confirmation", new { Cust_ID = customer.Cust_ID, Inst_ID= instrument.Inst_ID});
+            }
+            
+            //Else if not valid, returns forms with error messages
+            else
+
+            return View(customer);
+        }
+
+        public ActionResult Confirmation(int Cust_ID, int Inst_ID)
+        {
+            Customer customer = db.Customers.Find(Cust_ID);
+            Instrument instrument = db.Instruments.Find(Inst_ID);
+            
+            //Sets customer and instrument as ViewBags to send to the View
+            ViewBag.Customer = customer;
+            ViewBag.Instrument = instrument;
+            
+            //Calculates the Total Price paid at the end of the 18 months for selected instrument
+            string sub = instrument.Inst_Price.Substring(1, 2);
+            ViewBag.Total = 18 * Convert.ToInt32(sub);
+
+            //Finds the Image source for selected instrument
+            switch (instrument.Inst_Description)
+            {
+                case "Trumpet":
+                    ViewBag.Src = "../Images/trumpet.jpg";
+                    break;
+                case "Trombone":
+                    ViewBag.Src = "../Images/trombone.jpg";
+                    break;
+                case "French Horn":
+                    ViewBag.Src = "../Images/frenchhorn.jpg";
+                    break;
+                case "Flute":
+                    ViewBag.Src = "../Images/flute.jpg";
+                    break;
+                case "Clarinet":
+                    ViewBag.Src = "../Images/clarinet.jpg";
+                    break;
+                case "Saxaphone":
+                    ViewBag.Src = "../Images/sax.jpg";
+                    break;
+            }
+            
+            
+            
+            return View();
+
+
+
+
+
         }
 
         public ActionResult About()
@@ -47,53 +148,6 @@ namespace BlowOut.Controllers
             return View();
         }
 
-        public ActionResult SelectedInstrument(string instrumentID)
-        {
 
-            if (instrumentID != null)
-            {
-                ViewBag.Instrument = instrumentID;
-
-                switch (instrumentID)
-                {
-                    case "Trumpet":
-                        ViewBag.New = "$55/month";
-                        ViewBag.Used = "$25/month";
-                        ViewBag.Src = "../Images/trumpet.jpg";
-                        break;
-                    case "Trombone":
-                        ViewBag.New = "$60/month";
-                        ViewBag.Used = "$35/month";
-                        ViewBag.Src = "../Images/trombone.jpg";
-                        break;
-                    case "French Horn":
-                        ViewBag.New = "$70/month";
-                        ViewBag.Used = "$50/month";
-                        ViewBag.Src = "../Images/frenchhorn.jpg";
-                        break;
-                    case "Flute":
-                        ViewBag.New = "$40/month";
-                        ViewBag.Used = "$25/month";
-                        ViewBag.Src = "../Images/flute.jpg";
-                        break;
-                    case "Clarinet":
-                        ViewBag.New = "$35/month";
-                        ViewBag.Used = "$27/month";
-                        ViewBag.Src = "../Images/clarinet.jpg";
-                        break;
-                    case "Saxaphone":
-                        ViewBag.New = "$42/month";
-                        ViewBag.Used = "$30/month";
-                        ViewBag.Src = "../Images/sax.jpg";
-                        break;
-                }
-                return View();
-            }
-            else
-            {
-                return RedirectToAction("Rentals");
-            }
-            
-        }
     }
 }

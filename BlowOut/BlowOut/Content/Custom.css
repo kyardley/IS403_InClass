@@ -107,3 +107,26 @@
     filter: alpha(opacity=100); /* For IE8 and earlier */
 }
 
+
+.field-validation-error {
+  color: #df691a;
+}
+.field-validation-valid {
+  display: none;
+}
+.input-validation-error {
+  /*border: 3px solid #df691a;*/
+  background-color: #df691a;
+}
+.validation-summary-errors {
+  font-weight: bold;
+  color: #df691a;
+}
+.validation-summary-valid {
+  display: none;
+}
+
+/*Class stop print confirmation*/
+.print {visibility:visible;}
+
+figcaption { color: #df691a }
